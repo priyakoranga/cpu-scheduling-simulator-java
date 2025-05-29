@@ -5,7 +5,7 @@ public interface Scheduler {
 
    public Job dequeue();
 
-   // enque
+   // ,,
    public void enqueue(Job job);
 
    // processes
