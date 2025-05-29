@@ -7,7 +7,6 @@ import java.util.Random;
 
 //main 
 //code
-//f
 public class SchedulingGUI extends JFrame {
     private String[] algorithms = { "FCFS", "Round Robin", "Shortest Job First", "Priority Scheduling" };
     private String sourcePath = new String();
