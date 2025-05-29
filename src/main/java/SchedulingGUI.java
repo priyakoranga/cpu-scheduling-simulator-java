@@ -2,24 +2,28 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import javax.swing.*;
 import java.io.File;
+
 import java.util.Random;
 
+//main 
+//code
+//f
 public class SchedulingGUI extends JFrame {
-    private String[] algorithms = {"FCFS", "Round Robin", "Shortest Job First", "Priority Scheduling"};
+    private String[] algorithms = { "FCFS", "Round Robin", "Shortest Job First", "Priority Scheduling" };
     private String sourcePath = new String();
     public static int NUM_OF_PROCESSES = 0;
     static String selectedAlgo = new String();
-    
+
     public SchedulingGUI() {
         initComponents();
-        jLabel7.setIcon(new javax.swing.ImageIcon("src\\main\\java\\dark-abstract-tech-background_53876-90630.jpg")); 
+        jLabel7.setIcon(new javax.swing.ImageIcon("src\\main\\java\\dark-abstract-tech-background_53876-90630.jpg"));
         setResizable(false);
         setTitle("CPU Scheduling Simulator");
         jComboBox1.setModel(new DefaultComboBoxModel<>(algorithms));
         addWindowListener(new WindowListener());
         setLocationRelativeTo(null);
     }
-    
+
     private class WindowListener extends WindowAdapter {
         public void windowOpened(WindowEvent e) {
             TitleThread thread = new TitleThread("Simulation", jLabel1, 200);
@@ -28,7 +32,8 @@ public class SchedulingGUI extends JFrame {
     }
 
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
@@ -55,7 +60,8 @@ public class SchedulingGUI extends JFrame {
         jLabel2.setText("# of Process:");
         jPanel1.add(jLabel2, new AbsoluteConstraints(320, 290, 130, 30));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.setModel(
+                new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel1.add(jComboBox1, new AbsoluteConstraints(490, 190, 140, 30));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -112,23 +118,24 @@ public class SchedulingGUI extends JFrame {
         jLabel6.setText("(0 <= N <= 10)");
         jPanel1.add(jLabel6, new AbsoluteConstraints(650, 290, 120, 30));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon("D:\\Programming Files\\CPUSchedulingSimulation\\src\\main\\java\\dark-abstract-tech-background_53876-90630.jpg")); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(
+                "D:\\Programming Files\\CPUSchedulingSimulation\\src\\main\\java\\dark-abstract-tech-background_53876-90630.jpg")); // NOI18N
         jPanel1.add(jLabel7, new AbsoluteConstraints(0, 0, 960, 530));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 957, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 957,
+                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)));
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 533, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 533,
+                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)));
 
         jPanel1.getAccessibleContext().setAccessibleName("");
 
@@ -136,43 +143,41 @@ public class SchedulingGUI extends JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.showOpenDialog(null);
         File file = fileChooser.getSelectedFile();
         sourcePath = file.getAbsolutePath();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }// GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton2ActionPerformed
         JOptionPane.showMessageDialog(null, "Developers:\n\nAmmar Ahmed, BSCS-IV.\nSuraksha Sadhwani, BSCS-IV.");
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }// GEN-LAST:event_jButton2ActionPerformed
 
-    private void nextStep2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextStep2ActionPerformed
+    private void nextStep2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_nextStep2ActionPerformed
         int numOfProcesses = Integer.parseInt(jTextField1.getText());
-        if(sourcePath.isEmpty())
+        if (sourcePath.isEmpty())
             JOptionPane.showMessageDialog(null, "ERROR: Please input the source of computation");
-        else if(numOfProcesses <= 0)
+        else if (numOfProcesses <= 0)
             JOptionPane.showMessageDialog(null, "ERROR: Please input the appropriate number of processes");
         else {
             selectedAlgo = jComboBox1.getSelectedItem().toString();
             NUM_OF_PROCESSES = Integer.parseInt(jTextField1.getText());
             Job[] jobs = new Job[NUM_OF_PROCESSES];
-            for(int i = 1; i <= NUM_OF_PROCESSES; i++) {
-                String processID = "P"+i;
+            for (int i = 1; i <= NUM_OF_PROCESSES; i++) {
+                String processID = "P" + i;
                 long arrivalTime = (new java.util.Random().nextInt(9) + 1) * 300;
                 long burstTime = (new java.util.Random().nextInt(3) + 1) * 100;
                 long STRTTIME = System.nanoTime();
-                
+
                 Job newJob = new Job(processID, arrivalTime, burstTime, STRTTIME);
-                jobs[(i-1)] = newJob;
+                jobs[(i - 1)] = newJob;
             }
-                CalcSimulation sim = 
-                        new CalcSimulation(jobs, NUM_OF_PROCESSES, sourcePath, selectedAlgo);
+            CalcSimulation sim = new CalcSimulation(jobs, NUM_OF_PROCESSES, sourcePath, selectedAlgo);
             sim.start();
             this.dispose();
         }
-    }//GEN-LAST:event_nextStep2ActionPerformed
-
+    }// GEN-LAST:event_nextStep2ActionPerformed
 
     public static void main(String args[]) {
         try {
@@ -183,13 +188,17 @@ public class SchedulingGUI extends JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(SchedulingGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SchedulingGUI.class.getName()).log(java.util.logging.Level.SEVERE, null,
+                    ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(SchedulingGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SchedulingGUI.class.getName()).log(java.util.logging.Level.SEVERE, null,
+                    ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(SchedulingGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SchedulingGUI.class.getName()).log(java.util.logging.Level.SEVERE, null,
+                    ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(SchedulingGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SchedulingGUI.class.getName()).log(java.util.logging.Level.SEVERE, null,
+                    ex);
         }
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
