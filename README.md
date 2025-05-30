@@ -1,4 +1,6 @@
 #CPU Scheduling Simulator (Java)
+
+
 A CPU Scheduling Simulator built in Java that visually and programmatically demonstrates the working of various CPU scheduling algorithms. This project was developed as part of a Software Engineering curriculum in the 3rd year of BTech in Computer Science.
 
 📌 Features
